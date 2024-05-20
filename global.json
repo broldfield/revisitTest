@@ -1,6 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/reVISit-studies/study/1.0.0-beta4/src/parser/GlobalConfigSchema.json",
     "configsList": [
+        "test-bushfire",
         "demo-html",
         "demo-cleveland",
         "demo-brush-interactions",
@@ -17,6 +18,9 @@
         "test-skip-logic"
     ],
     "configs": {
+        "test-bushfire": {
+            "path": "test-bushfire/config.json"
+        },
         "demo-html": {
             "path": "demo-html/config.json"
         },
