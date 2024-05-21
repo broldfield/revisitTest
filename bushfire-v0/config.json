@@ -1,0 +1,88 @@
+{
+  "$schema": "https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json",
+  "studyMetadata": {
+    "title": "Bushfire Uncertainty Study",
+    "version": "pilot",
+    "authors": ["CSIRO"],
+    "date": "2024-03-19",
+    "description": "Bushfire uncertainty questionnaire",
+    "organizations": ["CSIRO"]
+  },
+  "uiConfig": {
+    "contactEmail": "brodie.oldfield@data61.csiro.au",
+    "helpTextPath": "test-bushfire/assets/help.md",
+    "logoPath": "revisitAssets/revisitLogoSquare.svg",
+    "withProgressBar": true,
+    "autoDownloadStudy": false,
+    "sidebar": true
+  },
+  "components": {
+    "introduction": {
+      "type": "markdown",
+      "path": "bushfire-v0/assets/introduction.md",
+      "response": []
+    },
+    "consent": {
+      "type": "markdown",
+      "path": "bushfire-v0/assets/consent.md",
+      "response": [
+        {
+          "id": "consent",
+          "prompt": "I have read and understood the information above and agree to participate in this study.",
+          "required": true,
+          "location": "belowStimulus",
+          "type": "radio",
+          "options": [
+            {
+              "label": "Agree",
+              "value": "agree"
+            },
+            {
+              "label": "Disagree",
+              "value": "disagree"
+            }
+          ]
+        }
+      ]
+    },
+    "bushfire-map-1": {
+      "type": "image",
+      "path": "bushfire-v0/assets/Bushfire-Pic-1.png",
+      "style": {
+        "width": "800px"
+      },
+      "instruction": "Example Task: Looking at a bushfire map...",
+      "response": [
+        {
+          "id": "resp-bushmap1",
+          "prompt": "Assuming a high value is a high chance of that area being cleared in a bushfire, what type of chance is purple? ",
+          "required": true,
+          "location": "belowStimulus",
+          "type": "radio",
+          "options": [
+            {
+              "label": "Low",
+              "value": "Low"
+            },
+            {
+              "label": "Medium",
+              "value": "Medium"
+            },
+            {
+              "label": "High",
+              "value": "High"
+            },
+            {
+              "label": "Unsure",
+              "value": "Unsure"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "sequence": {
+    "order": "fixed",
+    "components": ["introduction", "consent", "bushfire-map-1"]
+  }
+}
